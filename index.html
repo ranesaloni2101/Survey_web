@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily – Hourly Log Sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --primary:#0b5ed7;
+  --bg:#f1f4f8;
+  --card:#ffffff;
+  --border:#dfe3e8;
+  --text:#1f2937;
+}
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:var(--bg);
+}
+.header{
+  background:var(--primary);
+  color:#fff;
+  padding:18px;
+  text-align:center;
+}
+.container{
+  max-width:1100px;
+  margin:30px auto;
+  padding:25px;
+  background:var(--card);
+  border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.full{ grid-column:1/-1; }
+label{
+  font-weight:600;
+  font-size:14px;
+}
+input,select,textarea{
+  width:100%;
+  padding:10px;
+  border:1px solid var(--border);
+  border-radius:6px;
+}
+textarea{ min-height:70px; }
+.actions{
+  margin-top:20px;
+  text-align:right;
+}
+button{
+  background:var(--primary);
+  color:#fff;
+  padding:10px 22px;
+  border:none;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+}
+@media(max-width:768px){
+  .form-grid{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h2>DAILY – HOURLY LOG SHEET</h2>
+  <p>ABC Ltd, MUMBAI</p>
+</div>
+
+<div class="container">
+
+<form action="save.php" method="post">
+
+<div class="form-grid">
+
+<div>
+<label>Shift Operator *</label>
+<select name="shift_operator" required>
+<option value="">Select</option>
+<option>A</option><option>B</option><option>C</option>
+</select>
+</div>
+
+<div>
+<label>Time (Hour) *</label>
+<select name="time" required>
+<option value="">Select</option>
+<option>00</option><option>01</option><option>02</option><option>03</option>
+<option>04</option><option>05</option><option>06</option><option>07</option>
+<option>08</option><option>09</option><option>10</option><option>11</option>
+<option>12</option><option>13</option><option>14</option><option>15</option>
+<option>16</option><option>17</option><option>18</option><option>19</option>
+<option>20</option><option>21</option><option>22</option><option>23</option>
+</select>
+</div>
+
+<input type="hidden" name="date" value="<?=date('Y-m-d')?>">
+
+<div><label>FILTER PUMP DISCH PRES</label><input name="filter_pump" required></div>
+<div><label>MULTI GRADE FILTER OUT PRES</label><input name="multi_grade" required></div>
+<div><label>MICRIN CARTRIDGE FILTER OUT</label><input name="micrin" required></div>
+<div><label>HP PUMP DISC</label><input name="hp_pump" required></div>
+<div><label>2ND STAGE BOOSTER PUMP DISC</label><input name="booster_pump" required></div>
+<div><label>MOTORISED VALVE INLET</label><input name="motor_valve" required></div>
+<div><label>PERMEATE OUT</label><input name="permeate_out" required></div>
+<div><label>REJECT OUT</label><input name="reject_out" required></div>
+<div><label>CONDUCTIVITY – FEED</label><input name="cond_feed" required></div>
+<div><label>CONDUCTIVITY – PERMEATE</label><input name="cond_perm" required></div>
+<div><label>CONDUCTIVITY – REJECT</label><input name="cond_reject" required></div>
+<div><label>pH FEED</label><input name="ph_feed" required></div>
+<div><label>pH REJECT</label><input name="ph_reject" required></div>
+<div><label>FEED TEMP (°C)</label><input name="feed_temp" required></div>
+<div><label>FEED FLOW</label><input name="feed_flow" required></div>
+<div><label>1ST STAGE PERMEATE FLOW</label><input name="perm1" required></div>
+<div><label>2ND STAGE PERMEATE FLOW</label><input name="perm2" required></div>
+<div><label>FINAL PERMEATE FLOW</label><input name="final_perm" required></div>
+<div><label>FEED FLOWMETER</label><input name="feed_fm" required></div>
+<div><label>PERMEATE FLOWMETER</label><input name="perm_fm" required></div>
+
+<div class="full">
+<label>Remarks *</label>
+<textarea name="remarks" required></textarea>
+</div>
+
+</div>
+
+<div class="actions">
+<button type="submit">Submit Entry</button>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
