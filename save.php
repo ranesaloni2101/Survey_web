@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set("Asia/Kolkata");
 
-$file = "Concord_Hourly_Log.csv";
+$file = "Con_Hourly_Log.csv";
 
 // Create file with header if not exists
 if (!file_exists($file)) {
@@ -57,4 +57,5 @@ fclose($fp);
 
 // Redirect back
 header("Location: index.html");
+
 exit;
