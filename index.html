@@ -66,6 +66,35 @@ button{
 @media(max-width:768px){
   .form-grid{ grid-template-columns:1fr; }
 }
+/* Each form row: label | field */
+.form-grid > div{
+  display:grid;
+  grid-template-columns: 160px 1fr;   /* smaller label width for mobile */
+  align-items:center;
+  gap:10px;
+}
+
+/* Textarea row */
+.full{
+  display:grid;
+  grid-template-columns: 160px 1fr;
+}
+
+/* Neat alignment */
+label{
+  text-align:right;
+  font-size:13px;
+}
+
+/* Inputs height consistency */
+input, select, textarea{
+  height:36px;
+}
+
+textarea{
+  height:70px;
+}
+
 </style>
 </head>
 
@@ -136,10 +165,7 @@ button{
 <div class="actions">
 <button type="submit">Submit Entry</button>
 </div>
-
 </form>
-
 </div>
-
 </body>
 </html>
